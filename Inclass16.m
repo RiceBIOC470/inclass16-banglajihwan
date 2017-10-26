@@ -105,10 +105,11 @@ figure; imshow(imgT2, [200,1000]); hold on;
 for ii = 1:size(peaks{1})
     plot(peaks{1}(ii,1), peaks{1}(ii,2),'r*','MarkerSize' , 24)  
     
+   
+   plot(peaks{2}(ii,1), peaks{2}(ii,2),'cs','MarkerSize' , 24)
    nextind = peaks_matched{1}(ii,4);
    if nextind > 0 
-   plot(peaks{2}(ii,1), peaks{2}(ii,2),'cs','MarkerSize' , 24)
-   plot([peaks{2}(ii,1) peaks{1}(ii,1)], [peaks{2}(ii,2) peaks{1}(ii,2)], 'g');
+   plot([peaks{2}(nextind,1) peaks{1}(ii,1)], [peaks{2}(nextind,2) peaks{1}(ii,2)], 'g');
    end 
 end 
 
